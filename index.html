@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>DISEÑO WEB II</title>
+  <link rel="shortcut icon" href="img/pics/logoico.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MAIN WRAPPER -->
+  <div id="wrapper">
+
+    <!-- BANNER WRAPPER -->
+    <div id="banner-wrapper">
+      <header>
+        <div id="header-inner">
+          <a href="#" id="logo">
+            <canvas width="500" height="100" id="lienzo"></canvas>
+              <script>
+                var cnv, ctx, pos_x = 0, img;
+                function anim() {
+                  ctx.clearRect(0, 0, 600, 200);
+                  ctx.drawImage(img, pos_x, 0);
+                  pos_x += 1;
+                  setTimeout(anim, 35);
+                }
+                window.onload = function() {
+                  img = new Image();
+                  img.src = 'img/pics/logoclavelsoft2.png';
+                  cnv = document.getElementById('lienzo');
+                  ctx = cnv.getContext('2d');
+                  // iniciar la animación
+                  anim();
+                }
+              </script>
+          </a>
+
+          <nav>
+            <a href="#" id="menu-icon">
+              <i class="fa fa-bars"></i>
+            </a>
+            <ul>
+              <li>
+                <a href="index.html" class="current">
+                  inicio
+                </a>
+              </li>
+              <li>
+                <a href="#Habilidades">
+                  Habilidades
+                </a>
+              </li>
+              <li>
+                <a href="#Portafolio">
+                  Portafolio
+                </a>
+              </li>
+              <li>
+                <a href="#Servicios">
+                  Servicios
+                </a>
+              </li>
+              <li>
+                <a href="contactos.html">
+                  Contactos
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- SLIDER -->
+      <div id="slide-wrap">
+        <section class="slider">
+          <ul class="slider1">
+            <li><img src="img/slider/slider1.jpg" alt=""></li>
+            <li><img src="img/slider/slider2.jpg" alt=""></li>
+            <li><img src="img/slider/slider3.jpg" alt=""></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- ICONS -->
+    <section class="one-third" id="Habilidades">
+      <div class="icon-wrap">
+        <i class="fa fa-desktop"></i>
+      </div>
+      <h3>Web Design</h3>
+      <p>En un mundo digital, las primeras impresiones son vitales y un excelente servicio de diseño web es la clave del éxito. Los usuarios disfrutan visitando sitios que son estéticamente atractivos y fáciles de navegar. Permita que nuestro equipo ayude a su sitio web a hacer una buena impresión, rápido y accesible. ClavelSoft Brinda Servicios de diseño de paginas web en Bolivia y el mundo entero.</p>
+    </section>
+    <section class="one-third">
+      <div class="icon-wrap">
+        <i class="fa fa-pencil-square-o"></i>
+      </div>
+      <h3>Graphic Design</h3>
+      <p>Las ventajas de un estudio de diseño gráfico es la diversidad de las propuestas dadas, puesto que el equipo está formado por muchos diseñadores gráficos diferentes, con estilos únicos. Siempre tendrás alternativas en tus bocetos</p>
+    </section>
+    <section class="one-third">
+      <div class="icon-wrap">
+        <i class="fa fa-file-code-o"></i>
+      </div>
+      <h3>Development</h3>
+      <p>Los servicios ofrecidos por ClavelSoft comprenden diversos ambitos de la informática. Analizamos de manera exhaustiva los requerimientos de su empresa y usted, buscando la solución que mejor se adapte a sus necesidades.</p>
+    </section>
+
+    <div class="clearfix-padding"></div>
+    <!-- LEFT COL -->
+    <section class="left-col" id="Portafolio">
+      <h3>Portafolio</h3>
+      <p>ClavelSoft, es una compañía joven dedicada al desarrollo de software empresarial y personal, cuenta con productos propios (golosoft, andarin) que operan en las principales entidades del país, a su vez es una Fábrica de Software bajo la cual se desarrollan productos a la medida del cliente, para los rubros de telefonía, banca, medios de pago, e-commerce, automotriz, entre otros, enfocandonos en solo satisfacer al cliente.</p>
+    </section>
+    <section class="sidebar">
+     <center> <img src="img/pics/logoclavelsoft.png"> </center>
+    </section>
+
+    <div class="clearfix-padding"></div>
+
+    <div class="one-third-padding" id="Servicios">
+      <h3>Estilos Grandiosos</h3>
+      <img src="img/pics/image1.png" alt="">
+      <p>Elaboramos diseños creativos y funcionales. Damos firmeza a su imagen corporativa. Hacemos que su imagen empresarial se destaque de la competencia. Y lo principal que usted este satisfecho!</p>
+    </div>
+    <div class="one-third-padding">
+      <h3>Diseño Avanzado</h3>
+      <img src="img/pics/image2.png" alt="">
+      <p>Contamos con profesionales en el diseño y desarrollo de aplicaciones web y dispositivos móviles, alojados en la nube que nos permite escalar en cualquier momento según las necesidades o exigencias del uso de la aplicación. </p>
+    </div>
+    <div class="one-third-padding">
+      <h3>Conocimiento Ilimitado</h3>
+      <img src="img/pics/image3.png" alt="">
+      <p>A la medida del cliente, incluyendo aplicaciones de negocios, integración de sistemas existentes, programación tradicional, programación web, dispositivos móviles y bases de datos utilizando herramientas de desarrollo java, android, pl/sql, .net, php, python, JavaScript y HTML5.</p>
+    </div>
+  </div>
+  <div class="clearfix-padding"></div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="banner-wrapper">
+      <div class="icon-text">
+        <div class="icon-text-icon">
+          <ul class="footer-nav">
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Habilidades</a>
+            </li>
+            <li>
+              <a href="#">Portafolio</a>
+            </li>
+            <li>
+              <a href="#">Nuestro Equipo</a>
+            </li>
+            <li>
+              <a href="contactos.html">Contactos</a>
+            </li>
+          </ul>
+        </div>
+        <div class="icon-text-text">
+          <ul class="social">
+            <li>
+              <a href="mailto:grillex.blues@gmail.com">
+                <i class="fa fa-envelope-o"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://facebook.com/waldoclavelsantacruz">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://twitter.com/waldoclavelsantacruz">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://youtube.com/waldoclavelsantacruz">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="second-footer">
+    <p>
+      &copy; <a href="http://clavelsoft.com">Clavelsoft.com</a>
+    </p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    $(document).ready(function(){
+      $('.slider1').bxSlider({
+        mode: 'fade',
+      });
+      $('.slider2').bxSlider({
+        mode: 'fade',
+      });
+      $('.slider3').bxSlider({
+        mode: 'fade',
+      });
+    });
+  </script>
+</body>
+</html>

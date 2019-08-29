@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="shortcut icon" href="img/pics/logoico.ico">
+	<title>CONTACTOS CLAVELSOFT</title>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v3"></script>
+  <style type="text/css">
+        body {
+   background: #005AA7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+   <section id="cover">
+     <div id="cover-texto">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="display-3">CLAVELSOFT</h1>
+            <p>Encuentranos Y Contactanos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <nav class="navbar navbar-expand-lg navbar-inverse bg-light">
+   <a class="navbar-brand">
+    <img src="img/pics/logoclavelsoft2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    ClavelSoft
+  </a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="videos.html">Chat en Vivo!</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="juego.html">JUEGO</a>
+      </li>
+    </ul>
+</nav>
+<center><h2>LOCALIZANOS EN EL MAPA</h2></center>
+    <center><div id="mapa" align="center" style="width: 700px; height: 500px;">
+    --MAPA HACIA CLAVELSOFT--    
+    </div></center>
+    <p align="center">Direccion: Calle Adrian Patiño # 2000</p>
+  <script type="text/javascript">
+   var divMapa = document.getElementById('mapa');
+   navigator.geolocation.getCurrentPosition(fn_ok, fn_mal);
+   function fn_mal(){
+
+   }
+   function fn_ok(rta){
+      var lat=rta.coords.latitude;
+      var lon=rta.coords.longitude;
+
+      var gLatlon = new google.maps.LatLng(lat, lon);
+      var objConfig = {
+        zoom: 17,
+        center: gLatlon
+      }
+
+      var gMapa = new google.maps.Map (divMapa, objConfig);
+      var objConfigMarker = {
+        position: gLatlon,
+        map: gMapa,
+        title: "Usted esta aqui"
+      }
+
+      var gMarker = new google.maps.Marker(objConfigMarker);
+      
+     
+
+
+       var objConfigMarker2 = {
+        position: {lat:-16.514344, lng:-68.143346},
+        map: gMapa,
+        animation: google.maps.Animation.DROP,
+        title: "ClavelSoft"
+      }
+
+      var gMarker2 = new google.maps.Marker(objConfigMarker2);
+        var objConfigDR = {
+          map: gMapa
+        }
+        var objConfigDS = {
+          origin: gLatlon,
+          destination:{lat:-16.514344, lng:-68.143346},
+          travelMode: google.maps.TravelMode.WALKING
+        }
+     var ds = new google.maps.DirectionsService();
+     var dr = new google.maps.DirectionsRenderer(objConfigDR);
+
+     ds.route(objConfigDS, fnRutear);
+
+     function fnRutear (resultados, status){
+        if (status=='OK'){
+          dr.setDirections(resultados);
+        }else{
+          console.log('Error '+status);
+        }
+     }
+   }
+  </script>
+ 
+ <h2>Tienes alguna sugerencia o duda?, Escribenos y nos contactaremos contigo</h2>
+  <section id="formulario">
+    <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputname">Nombre Completo</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Nombre y Apellido" value="">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputphone">Telefono o Celular</label>
+      <input type="text" class="form-control" id="inputNumber" placeholder="Telefono" value="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Dirección</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Calle o avenida, numero de casa, zona" value="">
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="">
+  </div> 
+   <div class="form-row">    
+    <div class="form-group col-md-6">
+  <button   type="submit" id="enviar" class="btn btn-primary "  value="Submit" onclick="validaCampos();">Enviar</button>
+ 
+  </div> 
+    <div class="form-group col-md-6">
+  <button type="reset" class="btn btn-primary" >Borrar</button>
+</div>
+</div>
+</form>
+  <script type="text/javascript">*
+  
+</script>
+<script type="text/javascript">
+  function validaCampos(){
+var nombre=document.getElementById("inputName").value;
+var fono=document.getElementById("inputNumber").value;
+var canton=document.getElementById("inputAddress").value;
+var mail=document.getElementById("inputEmail").value;
+
+if(nombre=="")
+{
+  alert("NO llenaste el nombre \n NO podremos contactarnos contigo");
+}
+else if(fono=="")
+  {
+  alert("NO llenaste tu numero telefonico \n NO podremos contactarnos contigo");
+ }
+else if(canton=="")
+  {
+  alert("NO llenaste tu Dirección  \n NO podremos contactarnos contigo");
+ }
+ else if(mail=="")
+  {
+  alert("NO llenaste tu numero e-mail \n NO podremos contactarnos contigo");
+ }
+else
+   {
+    alert("Nos contactaremos contigo a la brevedad posible para brindarte asesoramiento en las dudas que tengas...GRACIAS POR VISITARNOS!!!!");
+   }
+
+}
+</script>
+
+  </section>
+
+<h4>Tambien puedes ingresar a nuestro chat...</h4>
+ <center><div class="spinner-border text-danger">
+    <div>Chat</div>
+</div></center>
+<button type="button" class="btn btn-secondary btn-lg btn-block">"CHAT Interactivo ClavelSoft"</button>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
